@@ -25,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,10 +34,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -84,7 +80,7 @@
               "RelativeDocumentMoniker": "Bank Project By OOP\\Bank Project By OOP.cpp",
               "ToolTip": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\Bank Project By OOP.cpp",
               "RelativeToolTip": "Bank Project By OOP\\Bank Project By OOP.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAtwCAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-04T03:26:25.664Z",
               "EditorCaption": ""

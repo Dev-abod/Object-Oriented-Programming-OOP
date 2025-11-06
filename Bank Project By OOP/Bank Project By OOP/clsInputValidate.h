@@ -79,6 +79,14 @@ public:
 		return Number;
 	}
 
+	static string ReadString()
+	{
+		string S1 = "";
+		getline(cin >> ws, S1);
+	   
+		return S1;
+	}
+
 	static int ReadIntNumberBetween(int From, int To, string ErrorMessage = "Number is not within range, Enter again:\n")
 	{
 		int Number = ReadIntNumber();

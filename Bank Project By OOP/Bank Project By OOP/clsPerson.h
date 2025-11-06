@@ -91,7 +91,6 @@ public:
         cout << "\nEmail    : " << _Email;
         cout << "\nPhone    : " << _Phone;
         cout << "\n___________________\n";
-
     }
 
 };
