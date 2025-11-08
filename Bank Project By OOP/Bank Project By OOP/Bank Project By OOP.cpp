@@ -1,122 +1,60 @@
-
 #include <iostream>
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
+#include <iomanip>
 
-void ReadClientInfo(clsBankClient& Client)
+
+
+void PrintClientRecordLine(clsBankClient Client)
 {
-    cout << "\nEnter FirstName : ";
-    Client.FirstName = clsInputValidate::ReadString();
 
-    cout << "\nEnter LastName : ";
-    Client.LastName = clsInputValidate::ReadString();
+    cout << "| " << setw(15) << left << Client.AccountNumber();
+    cout << "| " << setw(20) << left << Client.FullName();
+    cout << "| " << setw(12) << left << Client.Phone;
+    cout << "| " << setw(20) << left << Client.Email;
+    cout << "| " << setw(10) << left << Client.PinCode;
+    cout << "| " << setw(12) << left << Client.AccountBalance;
 
-    cout << "\nEnter Email : ";
-    Client.Email = clsInputValidate::ReadString();
-
-    cout << "\nEnter Phone : ";
-    Client.Phone = clsInputValidate::ReadString();
-
-    cout << "\nEnter PinCode : ";
-    Client.PinCode = clsInputValidate::ReadString();
-
-    cout << "\nEnter Balance : ";
-    Client.AccountBalance = clsInputValidate::ReadDblNumber();
 }
 
-void AddNewClient()
+void ShowClientsList()
 {
-    string AccountNumber = "";
-    cout << "\nPlease Enter Client Account Number: ";
-    AccountNumber = clsInputValidate::ReadString();
 
-    while (clsBankClient::IsClientExist(AccountNumber))
-    {
-        cout << "\nAccount number is already Used, choose another one: ";
-        AccountNumber = clsInputValidate::ReadString();
-    }
+    vector <clsBankClient> vClients = clsBankClient::GetClientsList();
 
-    clsBankClient NewClient = clsBankClient::GetAddNewClientObject(AccountNumber);
+    cout << "\n\t\t\t\t\tClient List (" << vClients.size() << ") Client(s).";
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
 
-    ReadClientInfo(NewClient);
+    cout << "| " << left << setw(15) << "Accout Number";
+    cout << "| " << left << setw(20) << "Client Name";
+    cout << "| " << left << setw(12) << "Phone";
+    cout << "| " << left << setw(20) << "Email";
+    cout << "| " << left << setw(10) << "Pin Code";
+    cout << "| " << left << setw(12) << "Balance";
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
 
+    if (vClients.size() == 0)
+        cout << "\t\t\t\tNo Clients Available In the System!";
+    else
 
-    clsBankClient::enSaveResults SaveResult;
+        for (clsBankClient Client : vClients)
+        {
 
-    SaveResult = NewClient.Save();
+            PrintClientRecordLine(Client);
+            cout << endl;
+        }
 
-    switch (SaveResult)
-    {
-    case clsBankClient::enSaveResults::svSucceeded:
-    {
-        cout << "\nAccount Add ed Successfully :-)\n";
-        NewClient.Print();
-        break;
-    }
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
 
-    case clsBankClient::enSaveResults::svFaildEmptyObject:
-    {
-        cout << "\nError account was not saved because it is Empty";
-        break;
-    }
-
-    case clsBankClient::enSaveResults::svFaildAccountNumberExists:
-    {
-        cout << "Faild Account Number Exists";
-        break;
-    }
-
-    }
 }
-
-//void UpdateClient()
-//{
-//    string AccountNumber = "";
-//    cout << "\nPlease Enter Client Account Number: ";
-//    AccountNumber = clsInputValidate::ReadString();
-//
-//    while (!clsBankClient::IsClientExist(AccountNumber))
-//    {
-//        cout << "\nAccount number is not found, choose another one: ";
-//        AccountNumber = clsInputValidate::ReadString();
-//    }
-//
-//
-//    clsBankClient Client1 = clsBankClient::Find(AccountNumber);
-//    Client1.Print();
-//
-//    cout << "\n\nUpdate Client Info:";
-//    cout << "\n_____________________\n";
-//
-//    ReadClientInfo(Client1);
-//
-//    clsBankClient::enSaveResults SaveResult;
-//
-//    SaveResult = Client1.Save();
-//
-//    switch (SaveResult)
-//    {
-//    case clsBankClient::enSaveResults::svSucceeded:
-//    {
-//        cout << "\nAccount Update Successfully :-)\n";
-//        Client1.Print();
-//        break;
-//    }
-//    case clsBankClient::enSaveResults::svFaildEmptyObject:
-//    {
-//        cout << "\nError account was not saved because it is Empty";
-//        break;
-//    }
-//    }
-//     
-//}
 
 int main()
-{
-    //UpdateClient();
-    AddNewClient();
 
+{
+    ShowClientsList();
     system("pause>0");
     return 0;
-
 }
