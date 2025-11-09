@@ -370,5 +370,19 @@ public:
     }
 
 
+    static double GetTotalBalances()
+    {
+        vector <clsBankClient> vClients = GetClientsList();
+        double TotalBalances=0;
+        for (clsBankClient Client : vClients)
+        {
+            TotalBalances = TotalBalances + Client.AccountBalance;
+        }
+
+        return TotalBalances;
+
+    }
+
+
 };
 

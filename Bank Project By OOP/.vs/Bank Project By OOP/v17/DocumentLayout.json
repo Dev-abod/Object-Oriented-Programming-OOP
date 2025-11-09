@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\Bank Project By OOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|solutionrelative:Bank Project By OOP\\Bank Project By OOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsMainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|solutionrelative:Bank Project By OOP\\clsMainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|solutionrelative:Bank Project By OOP\\clsScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsBankClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|solutionrelative:Bank Project By OOP\\clsBankClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\Bank Project By OOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F5734AD0-4CB5-4200-9BAF-43DBD2FF8196}|Bank Project By OOP\\Bank Project By OOP.vcxproj|solutionrelative:Bank Project By OOP\\Bank Project By OOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,25 +39,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "clsScreen.h",
+              "DocumentMoniker": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsScreen.h",
+              "RelativeDocumentMoniker": "Bank Project By OOP\\clsScreen.h",
+              "ToolTip": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsScreen.h",
+              "RelativeToolTip": "Bank Project By OOP\\clsScreen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-09T04:58:42.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsMainScreen.h",
+              "DocumentMoniker": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsMainScreen.h",
+              "RelativeDocumentMoniker": "Bank Project By OOP\\clsMainScreen.h",
+              "ToolTip": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsMainScreen.h",
+              "RelativeToolTip": "Bank Project By OOP\\clsMainScreen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-09T04:53:17.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "clsBankClient.h",
               "DocumentMoniker": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsBankClient.h",
               "RelativeDocumentMoniker": "Bank Project By OOP\\clsBankClient.h",
               "ToolTip": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\clsBankClient.h",
               "RelativeToolTip": "Bank Project By OOP\\clsBankClient.h",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAowHYBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-04T03:42:34.734Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Bank Project By OOP.cpp",
               "DocumentMoniker": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\Bank Project By OOP.cpp",
               "RelativeDocumentMoniker": "Bank Project By OOP\\Bank Project By OOP.cpp",
               "ToolTip": "D:\\My_Projects\\Object Oriented Programming OOP\\C\u002B\u002B\\Bank Project By OOP\\Bank Project By OOP\\Bank Project By OOP.cpp",
               "RelativeToolTip": "Bank Project By OOP\\Bank Project By OOP.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-04T03:26:25.664Z",
               "EditorCaption": ""
