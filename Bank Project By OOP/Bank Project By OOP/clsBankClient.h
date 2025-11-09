@@ -14,13 +14,10 @@ private:
     enum enMode { EmptyMode = 0, UpdateMode = 1, AddNewMode = 2 };
     enMode _Mode;
 
-
     string _AccountNumber;
     string _PinCode;
     float _AccountBalance;
     bool _MarkedForDelete = false;
-
-
 
     static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = "#//#")
     {
@@ -34,7 +31,6 @@ private:
 
     static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#")
     {
-
         string stClientRecord = "";
         stClientRecord += Client.FirstName + Seperator;
         stClientRecord += Client.LastName + Seperator;
@@ -45,7 +41,6 @@ private:
         stClientRecord += to_string(Client.AccountBalance);
 
         return stClientRecord;
-
     }
 
     static  vector <clsBankClient> _LoadClientsDataFromFile()
@@ -324,9 +319,6 @@ public:
             break;
         }
         }
-
-
-
     }
 
     static bool IsClientExist(string AccountNumber)
@@ -352,9 +344,7 @@ public:
         }
 
         _SaveCleintsDataToFile(_vClients);
-
         *this = _GetEmptyClientObject();
-
         return true;
 
     }
@@ -369,20 +359,16 @@ public:
         return _LoadClientsDataFromFile();
     }
 
-
     static double GetTotalBalances()
     {
         vector <clsBankClient> vClients = GetClientsList();
-        double TotalBalances=0;
+        double TotalBalances = 0;
         for (clsBankClient Client : vClients)
         {
             TotalBalances = TotalBalances + Client.AccountBalance;
         }
-
         return TotalBalances;
-
     }
-
 
 };
 
