@@ -370,5 +370,27 @@ public:
         return TotalBalances;
     }
 
+
+    void Deposit(double Amount)
+    {
+        _AccountBalance += Amount;
+        Save();
+    }
+
+    bool Withdraw(double Amount)
+    {
+        if (Amount > _AccountBalance)
+        {
+            return false;
+        }
+           
+        else
+        {
+            _AccountBalance -= Amount;
+            Save();
+        }
+    
+    }
+
 };
 

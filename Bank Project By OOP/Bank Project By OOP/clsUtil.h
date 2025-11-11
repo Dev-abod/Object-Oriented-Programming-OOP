@@ -209,5 +209,48 @@ public:
 
     }
 
+    string NumberToText(int Num)
+    {
+        string Arr1To19[] = { "", "One", "Two", "Three", "Four", "Five", "Six",
+                             "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen",
+                             "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+                             "Nineteen" };
+
+        string Arr20To99[] = { "", "", "Twenty", "Thirty", "Forty", "Fifty",
+                              "Sixty", "Seventy", "Eighty", "Ninety" };
+
+        if (Num == 0)
+        {
+            return "";
+        }
+
+        if (Num >= 1 && Num <= 19)
+        {
+            return Arr1To19[Num];
+        }
+
+        if (Num >= 20 && Num <= 99)
+        {
+            return Arr20To99[Num / 10] + "-" + NumberToText(Num % 10);
+        }
+
+        if (Num >= 100 && Num <= 999)
+        {
+            return NumberToText(Num / 100) + " Hundred " + NumberToText(Num % 100);
+        }
+
+        if (Num >= 1000 && Num <= 999999)
+        {
+            return NumberToText(Num / 1000) + " Thousand, " + NumberToText(Num % 1000);
+        }
+
+        if (Num >= 1000000 && Num <= 999999999)
+        {
+            return NumberToText(Num / 1000000) + " Million, " + NumberToText(Num % 1000000);
+        }
+
+       
+    }
+
 };
 
