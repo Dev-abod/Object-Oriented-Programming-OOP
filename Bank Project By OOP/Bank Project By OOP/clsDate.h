@@ -1,5 +1,4 @@
 
-
 #pragma warning(disable : 4996)
 #pragma once
 
@@ -38,16 +37,13 @@ public:
 		_Day = stoi(vDate[0]);
 		_Month = stoi(vDate[1]);
 		_Year = stoi(vDate[2]);
-
 	}
 
 	clsDate(short Day, short Month, short Year)
 	{
-
 		_Day = Day;
 		_Month = Month;
 		_Year = Year;
-
 	}
 
 	clsDate(short DateOrderInYear, short Year)
@@ -59,11 +55,13 @@ public:
 		_Year = Date1.Year;
 	}
 
-	void SetDay(short Day) {
+	void SetDay(short Day) 
+	{
 		_Day = Day;
 	}
 
-	short GetDay() {
+	short GetDay() 
+	{
 		return _Day;
 	}
 	__declspec(property(get = GetDay, put = SetDay)) short Day;

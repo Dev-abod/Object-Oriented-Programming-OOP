@@ -1,6 +1,3 @@
-//ProgrammingAdvices.com
-//Mohammed Abu-Hadhoud
-
 #pragma once
 #include <iostream>
 #include <string>
@@ -73,31 +70,24 @@ public:
     }
 
     static  string GenerateWord(enCharType CharType, short Length)
-
     {
         string Word;
 
         for (int i = 1; i <= Length; i++)
-
         {
-
             Word = Word + GetRandomCharacter(CharType);
-
         }
         return Word;
     }
 
     static string  GenerateKey(enCharType CharType = CapitalLetter)
     {
-
         string Key = "";
-
 
         Key = GenerateWord(CharType, 4) + "-";
         Key = Key + GenerateWord(CharType, 4) + "-";
         Key = Key + GenerateWord(CharType, 4) + "-";
         Key = Key + GenerateWord(CharType, 4);
-
 
         return Key;
     }
@@ -106,12 +96,10 @@ public:
     {
 
         for (int i = 1; i <= NumberOfKeys; i++)
-
         {
             cout << "Key [" << i << "] : ";
             cout << GenerateKey(CharType) << endl;
         }
-
     }
 
     static void FillArrayWithRandomNumbers(int arr[100], int arrLength, int From, int To)
@@ -124,7 +112,6 @@ public:
     {
         for (int i = 0; i < arrLength; i++)
             arr[i] = GenerateWord(CharType, Wordlength);
-
     }
 
     static void FillArrayWithRandomKeys(string arr[100], int arrLength, enCharType CharType)
@@ -181,19 +168,14 @@ public:
     static  void Swap(clsDate& A, clsDate& B)
     {
         clsDate::SwapDates(A, B);
-
     }
-
-
 
     static  void ShuffleArray(string arr[100], int arrLength)
     {
-
         for (int i = 0; i < arrLength; i++)
         {
             Swap(arr[RandomNumber(1, arrLength) - 1], arr[RandomNumber(1, arrLength) - 1]);
         }
-
     }
 
     static string  Tabs(short NumberOfTabs)
@@ -206,31 +188,22 @@ public:
             cout << t;
         }
         return t;
-
     }
 
     static string  EncryptText(string Text, short EncryptionKey)
     {
-
         for (int i = 0; i <= Text.length(); i++)
         {
-
             Text[i] = char((int)Text[i] + EncryptionKey);
-
         }
-
         return Text;
-
     }
 
     static string  DecryptText(string Text, short EncryptionKey)
     {
-
         for (int i = 0; i <= Text.length(); i++)
         {
-
             Text[i] = char((int)Text[i] - EncryptionKey);
-
         }
         return Text;
 

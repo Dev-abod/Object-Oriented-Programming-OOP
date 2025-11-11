@@ -1,10 +1,5 @@
 #pragma once
 
-//ProgrammingAdvices.com
-//Mohammed Abu-Hadhoud
-
-#pragma once
-
 #include <iostream>
 #include <vector>
 
