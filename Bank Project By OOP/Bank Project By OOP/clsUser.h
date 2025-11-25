@@ -3,8 +3,11 @@
 #include <string>
 #include "clsPerson.h"
 #include "clsString.h"
+#include "clsDate.h"
 #include <vector>
+#include "clsScreen.h"
 #include <fstream>
+
 
 using namespace std;
 class clsUser : public clsPerson
@@ -26,7 +29,6 @@ private:
 
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
             vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
-
     }
 
     static string _ConverUserObjectToLine(clsUser User, string Seperator = "#//#")
@@ -44,6 +46,7 @@ private:
         return UserRecord;
 
     }
+   
 
     static  vector <clsUser> _LoadUsersDataFromFile()
     {
@@ -75,6 +78,39 @@ private:
 
     }
 
+
+
+    struct stLoginRegisterRecord;
+
+    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Seperator = "#//#")
+    {
+        stLoginRegisterRecord LoginRegisterRecord;
+
+        vector <string> LoginRegisterDataLine = clsString::Split(Line, Seperator);
+
+        LoginRegisterRecord.DateTime = LoginRegisterDataLine[0];
+        LoginRegisterRecord.UserName = LoginRegisterDataLine[1];
+        LoginRegisterRecord.Password = LoginRegisterDataLine[2];
+        LoginRegisterRecord.Permissions = LoginRegisterDataLine[3];
+
+
+
+        return LoginRegisterRecord;
+    }
+
+
+    string _PrepareLogInRecord(string Seperator = "#//#")
+    {
+        string UserRecord = "";
+        UserRecord += clsDate::GetSystemDateTimeString();
+        UserRecord += UserName + Seperator;
+        UserRecord += Password + Seperator;
+        UserRecord += to_string(Permissions);
+
+        return UserRecord;
+    }
+
+
     static void _SaveUsersDataToFile(vector <clsUser> vUsers)
     {
 
@@ -102,6 +138,34 @@ private:
 
         }
 
+    }
+
+    static void _SaveUsersDataToFileRegisters(vector <clsUser> vUsers)
+    {
+
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::out);//overwrite
+
+        string DataLine;
+
+        if (MyFile.is_open())
+        {
+
+            for (clsUser U : vUsers)
+            {
+                if (U.MarkedForDeleted() == false)
+                {
+                    //we only write records that are not marked for delete.  
+                    DataLine = _ConverUserObjectToLine(U);
+                    MyFile << DataLine << endl;
+
+                }
+
+            }
+
+            MyFile.close();
+
+        }
     }
 
     void _Update()
@@ -154,6 +218,14 @@ public:
     enum enPermissions {
         eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4,
         pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64
+    };
+
+    struct stLoginRegisterRecord
+    {
+        string DateTime;
+        string UserName;
+        string Password;
+        string Permissions;
     };
 
     clsUser(enMode Mode, string FirstName, string LastName,
@@ -344,6 +416,45 @@ public:
 
     }
 
+
+    void RegisterLogIn()
+    {
+        string stDateLine = _PrepareLogInRecord();
+
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::out | ios::app);//overwrite
+
+        if (MyFile.is_open())
+        {
+            MyFile << stDateLine << endl;
+            MyFile.close();
+        }
+    }
+
+    static vector <stLoginRegisterRecord> GetLoginRegisterList()
+    {
+        vector <stLoginRegisterRecord> vLoginRegisterRecord;
+
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::in);
+
+        if (MyFile.is_open())
+        {
+            string Line;
+            stLoginRegisterRecord LoginRegisterRecord;
+
+            while (getline(MyFile, Line))
+            {
+                LoginRegisterRecord = _ConvertLoginRegisterLineToRecord(Line);
+                vLoginRegisterRecord.push_back(LoginRegisterRecord);
+            }
+
+            MyFile.close();
+        }
+
+        return vLoginRegisterRecord;
+    }
+
     static clsUser GetAddNewUserObject(string UserName)
     {
         return clsUser(enMode::AddNewMode, "", "", "", "", UserName, "", 0);
@@ -353,6 +464,18 @@ public:
     {
         return _LoadUsersDataFromFile();
     }
+
+    bool CheckAccessPermission(enPermissions Permission)
+    {
+        if (this->Permissions == enPermissions::eAll)
+            return true;
+
+        if ((Permission & this->Permissions) == Permission)
+            return true;
+        else
+            return false;
+    }
+
 
 };
 
