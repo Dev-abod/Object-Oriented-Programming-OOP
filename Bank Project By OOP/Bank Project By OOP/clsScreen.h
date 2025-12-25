@@ -36,5 +36,18 @@ protected:
         else
             return true;
     }
+
+    static bool CheckAccessRights(clsUser::enPermissions Permission)
+    {
+        if (!CurrentUser.CheckAccessPermission(Permission))
+        {
+            cout << "\t\t\t\t\t__________________________________";
+            cout << "\n\n\t\t\t\t\t  Access Denied! Contact Your Admin"; 
+            cout << "\n\t\t\t\t\t__________________________________";
+            return false;
+        }
+        else
+            return true;
+    }
 };
 
